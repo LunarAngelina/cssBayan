@@ -84,19 +84,22 @@ img {
   opacity: 0;
   width: 0;
   align-self: center;
+  transform: scale(0.7);
 }
 .option:hover img {
   align-self: center;
   opacity: 1;
   width: clamp(8rem, 50vw, 20rem);
   height: auto;
-  transition: opacity 0.4s ease-in;
+  transform: scale(1);
+  transition: opacity 0.4s ease-in, transform 0.4s ease-in;
 }
 
 .option:has(.radio-btn:checked)>img {
   align-self: center;
   opacity: 1;
   width: clamp(8rem, 50vw, 20rem);
+  transform: scale(1);
   height: auto;
   border: solid 1px #e8e864;
   transition: opacity 0.4s ease-in, border 0.4s ease ;
