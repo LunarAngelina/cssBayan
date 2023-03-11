@@ -1,0 +1,129 @@
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+body {
+  background-color: black;
+  color: rgb(142, 142, 142);
+}
+h1 {
+  font-size: clamp(2rem, 10vw, 3.5rem);
+}
+h2 {
+  font-size: clamp(1.5rem, 8vw, 2.5rem);
+  font-style: italic;
+  font-weight: 400;
+}
+.bayan {
+  position: relative;
+  margin-inline: auto;
+  cursor: pointer;
+  width: clamp(10rem, 90vw, 60rem);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+.icon {
+  position: absolute;
+  opacity: 0;
+  right: 5vw;
+  top: 1rem;
+  font-size: 150%;
+  color: #e8e864;
+}
+.icon.icon-plus {
+  color:  rgb(85, 4, 160);
+}
+
+.bayan:hover {
+  color: rgb(85, 4, 160);
+  transition: color 0.3s ease-in-out;
+}
+.bayan:hover .icon.icon-plus {
+  opacity: 1;
+  transition: opacity 0.4s ease-in-out;
+}
+.option {
+  position: relative;
+  height: auto;
+  transition: all 0.4s ease-in;
+  cursor: pointer;
+}
+.option:hover {
+  color: #e864d2;
+}
+.option:hover .icon.icon-plus{
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.option:hover .icon.icon-star-empty{
+  opacity: 1;
+  color: #e864d2;
+  transition: opacity 0.3s ease-in-out;
+}
+.option:has(.radio-btn:checked)>.icon-star {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+.option:has(.radio-btn:checked)>.icon-plus {
+  opacity: 0;
+}
+.option:has(.radio-btn:checked)>.icon-star-empty {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+img {
+  opacity: 0;
+  width: 0;
+  align-self: center;
+}
+.option:hover img {
+  align-self: center;
+  opacity: 1;
+  width: clamp(8rem, 50vw, 20rem);
+  height: auto;
+  transition: opacity 0.4s ease-in;
+}
+
+.option:has(.radio-btn:checked)>img {
+  align-self: center;
+  opacity: 1;
+  width: clamp(8rem, 50vw, 20rem);
+  height: auto;
+  transition: opacity 0.4s ease-in;
+}
+.option:has(.radio-btn:checked) {
+  color: #e8e864;
+}
+.radio-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  appearance: none;
+  cursor: pointer;
+}
+.option:has(.radio-btn:active) {
+  opacity: 0.4;
+}
+.option {
+  display: flex;
+  flex-direction: column;
+  border-top: solid 1px #b1b186;
+  padding: 1rem;
+}
+label {
+  margin-bottom: 1rem;
+  width: clamp(8rem, 60vw, 30rem);
+  font-size: clamp(1rem, 4vw, 1.7rem);
+  font-weight: 600;
+}
